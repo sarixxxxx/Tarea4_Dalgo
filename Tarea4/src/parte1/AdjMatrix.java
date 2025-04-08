@@ -11,7 +11,7 @@ public class AdjMatrix {
 	}
 	
 	public int countVertex(List<DirectedEdge> edgesList) {
-		return findMaxVertex(edgesList)+1;
+		return findMaxVertex(edgesList)+1; 
 	}
 	
 	public int findMaxVertex(List<DirectedEdge> graph) {

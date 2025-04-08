@@ -1,5 +1,8 @@
 package parte2;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Implementation of a structure to store partitions of the numbers from 0 to n-1
@@ -64,4 +67,12 @@ public class Partition {
 	public boolean sameSubsets(int e1, int e2) {
 		return find(e1)==find(e2);
 	}
+	public int getN() {
+		return n;
+	}
+	public ArrayList<Integer> getRepresentantes() {
+		return representantes;
+	}
+	
+	
 }
