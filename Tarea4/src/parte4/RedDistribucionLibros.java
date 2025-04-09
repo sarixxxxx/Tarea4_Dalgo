@@ -21,9 +21,9 @@ public class RedDistribucionLibros {
         int superfuente = countVertex(listaCamiones);
         int superdestino = -superfuente;
 
-
+        listaAdj.put(superfuente, (List<Camion>) new ArrayList<Camion>());
+        listaAdj.put(superdestino, (List<Camion>) new ArrayList<Camion>());
         for (int fabrica : fabricas) {
-            listaAdj.computeIfAbsent(superfuente, k -> new ArrayList<>());
             Camion c1 = new Camion(superfuente, "S", fabrica, "F");
             c1.setLibros(librosPorCamion);
             listaAdj.get(superfuente).add(c1);
@@ -31,7 +31,6 @@ public class RedDistribucionLibros {
 
 
         for (int libreria : librerias) {
-            listaAdj.computeIfAbsent(libreria, k -> new ArrayList<>());
             Camion c1 = new Camion(libreria, "L", superdestino, "T");
             c1.setLibros(librosPorCamion);
             listaAdj.get(libreria).add(c1);
@@ -181,7 +180,7 @@ public class RedDistribucionLibros {
                 camion.setLibros(librosPorCamion);
                 respuesta.get(camion.getFuente()).add(camion);
             } else if (camion.getTipoFuente().equals("B")) {
-                Camion haciaBodegaPrima = new Camion(camion.getFuente(), camion.getTipoFuente(), -camion.getFuente(), "B");
+                Camion haciaBodegaPrima = new Camion(camion.getFuente(), "B", -camion.getFuente(), "B");
                 haciaBodegaPrima.setLibros(librosPorBodega);
                 respuesta.get(camion.getFuente()).add(haciaBodegaPrima);
 
