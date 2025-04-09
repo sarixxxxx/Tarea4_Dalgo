@@ -39,7 +39,7 @@ public class Partition {
 		int s1 = find(e1);
 		int s2 = find(e2);
 		if(s1==s2) return;
-		this.representantes.set(e2, s1);
+		this.representantes.set(s2, s1);
 		return;
 		//TODO: Finish immplementation
 		
